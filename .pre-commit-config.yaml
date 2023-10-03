@@ -56,3 +56,6 @@ repos:
         exclude: CHANGELOG.md
         description: >-
           Ensure files are consistent with .editorconfig
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.34.0
+    hooks: []

@@ -201,3 +201,6 @@ repos:
           to.
       - id: end-of-file-fixer
         name: end-of-file-fixer
+        description: >-
+          ensures that a file is either empty, or ends with one
+          newline.

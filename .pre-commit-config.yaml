@@ -172,3 +172,5 @@ repos:
         name: check-merge-conflict
         description: >-
           checks for files that contain merge conflict strings.
+      - id: fix-byte-order-marker
+        name: fix-byte-order-marker

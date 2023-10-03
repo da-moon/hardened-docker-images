@@ -1,0 +1,127 @@
+[
+  {
+    "name": "Issue: Chore",
+    "color": "#676BFB",
+    "description": "Task that isn't directly addressing a business goal"
+  },
+  {
+    "name": "Issue: Bug",
+    "color": "#b60205",
+    "description": "Something isn't working"
+  },
+  {
+    "name": "Issue: Enhancement",
+    "color": "#1c82b4",
+    "description": "Enhancement on current codebase"
+  },
+  {
+    "name": "Issue: Documentation",
+    "color": "#207de5",
+    "description": "Documenation is required"
+  },
+  {
+    "name": "Issue: Test",
+    "color": "#FF9324",
+    "description": "Test cases are missing"
+  },
+  {
+    "name": "Issue: Question",
+    "color": "#cc317c",
+    "description": "Further information is requested"
+  },
+  {
+    "name": "Issue: Maintenance",
+    "color": "#f37735",
+    "description": ""
+  },
+  {
+    "name": "Issue: Discussion",
+    "color": "#cc317c",
+    "description": ""
+  },
+  {
+    "name": "Issue: Feature",
+    "color": "#5fb434",
+    "description": "New feature or task"
+  },
+  {
+    "name": "Resolved",
+    "color": "#0e8a16",
+    "description": "This issue or pull request has already been addressed"
+  },
+  {
+    "name": "Resolved: By-Design",
+    "color": "#3865a3",
+    "description": "This issue or pull request is already part of the project plan"
+  },
+  {
+    "name": "Resolved: Duplicate",
+    "color": "#87a2c7",
+    "description": "This issue or pull request already exists"
+  },
+  {
+    "name": "Resolved: Not-Repro",
+    "color": "#93a4b0",
+    "description": "This issue is not reproducible"
+  },
+  {
+    "name": "Resolved: Wont-Fix",
+    "color": "#cccccc",
+    "description": "This will not be worked on"
+  },
+  {
+    "name": "Priority: High",
+    "color": "#eb6841",
+    "description": ""
+  },
+  {
+    "name": "Priority: Low",
+    "color": "#00b068",
+    "description": ""
+  },
+  {
+    "name": "Priority: Medium",
+    "color": "#edc951",
+    "description": ""
+  },
+  {
+    "name": "Priority: Critical",
+    "color": "#cc2a36",
+    "description": ""
+  },
+  {
+    "name": "Info: help-wanted",
+    "color": "#5319e7",
+    "description": ""
+  },
+  {
+    "name": "Status: In-Progress",
+    "color": "#1d76db",
+    "description": ""
+  },
+  {
+    "name": "Status: Ready",
+    "color": "#006b75",
+    "description": ""
+  },
+  {
+    "name": "Status: Blocked",
+    "color": "#ee4035",
+    "description": ""
+  },
+  {
+    "name": "Status: On-Hold",
+    "color": "#ee9d35",
+    "description": ""
+  },
+  {
+    "name": "Status: Completed",
+    "color": "#0e8a16",
+    "description": ""
+  },
+  {
+    "name": "Status: Review-Needed",
+    "color": "#fbca04",
+    "description": ""
+  }
+]

@@ -212,3 +212,8 @@ repos:
         name: check-toml
         description: >-
           ensures that TOML files are parseable.
+      - id: check-yaml
+        name: check-yaml
+        exclude: .*docker-compose.*
+        args:
+          - --allow-multiple-documents

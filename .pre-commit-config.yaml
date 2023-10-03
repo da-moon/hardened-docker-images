@@ -92,3 +92,6 @@ repos:
           - .yamlfmt
         description: >-
           Ensure YAML files are formatted
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.31.0
+    hooks: []

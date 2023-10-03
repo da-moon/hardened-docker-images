@@ -111,3 +111,6 @@ repos:
         name: docker-compose-check
         description: >-
           ensure validity of docker-compose files
+  - repo: https://github.com/hadolint/hadolint.git
+    rev: v2.12.1-beta
+    hooks: []

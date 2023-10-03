@@ -1,0 +1,10 @@
+---
+compact: false
+quiet: false
+skip-download: false
+download-external-modules: true
+framework:
+  - terraform
+  - secrets
+skip-check:
+  - CKV_DOCKER_*

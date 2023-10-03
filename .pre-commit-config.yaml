@@ -113,4 +113,7 @@ repos:
           ensure validity of docker-compose files
   - repo: https://github.com/hadolint/hadolint.git
     rev: v2.12.1-beta
-    hooks: []
+    hooks:
+      - id: hadolint-docker
+        name: hadolint-docker
+        entry: hadolint/hadolint hadolint

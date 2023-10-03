@@ -43,3 +43,5 @@ repos:
         description: >-
           forbid CRLF (carriage return) line endings (added in
           Windows by default)
+      - name: remove-crlf
+        id: remove-crlf

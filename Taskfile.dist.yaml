@@ -1,0 +1,108 @@
+---
+version: "3"
+env:
+  WORKING_DIR: '{{.WORKING_DIR | default "."}}'
+dotenv: [.env]
+includes:
+  pre-commit:
+    taskfile: "./contrib/tasks/pre-commit/Taskfile.yaml"
+    aliases: [pc]
+# ──────────────────────────────────────────────────────────────────────────────
+tasks:
+  default:
+    silent: true
+    deps:
+      - pre-commit:install
+    cmds:
+      - cmd: |
+          powershell -c '
+            if (-not (Get-Command "fzf" -ErrorAction SilentlyContinue)) {
+              task --list-all ;
+            } else {
+              $chosen=$(task --json --list-all `
+                | ConvertFrom-Json `
+                | Select-Object -ExpandProperty tasks `
+                | ForEach-Object { $_.name } | fzf);
+              if ( "$chosen" ) {
+                task "$chosen";
+              } else {
+                task --list-all ;
+              }
+            }'
+        platforms: [windows]
+      - cmd: |
+          # if 'fzf' or 'jq' are not available
+          ! ( \
+              fzf --version > /dev/null 2>&1 \
+              && jq --version > /dev/null 2>&1 \
+            ) && (task --list-all ; exit $?;)
+          chosen="$(task --list-all --json | jq -r '.tasks[].name' | fzf)";
+          if [ "${chosen}" != "" ]; then
+            task "${chosen}" ;
+            exit $? ;
+          fi
+        platforms: [linux, darwin]
+  clean:
+    aliases: [c]
+    deps: ['terraform:clean']
+    cmds:
+      - cmd: |
+          rm -rf ".task" ;
+        platforms: [linux, darwin]
+      - cmd: |
+          powershell -c '
+          if (Test-Path -PathType container -Path ".task" ) {Remove-Item ".task" -Recurse -Force ;}
+          if (Test-Path -PathType container -Path "tmp" ) {Remove-Item "tmp" -Recurse -Force ;}
+          '
+        platforms: [windows]
+  snapshot:
+    aliases: [s]
+    deps: [clean]
+    cmds:
+      - cmd: |
+          powershell -c '
+          $tmp = New-TemporaryFile ;
+          Remove-Item "$tmp" ;
+          New-Item -Path "$tmp" -ItemType Directory | Out-Null  ;
+          $time=Get-Date -UFormat "%Y-%m-%d-%H-%M" ;
+          $snapshot_dir="{{.ROOT_DIR}}/tmp/snapshots" ;
+          $path="${snapshot_dir}/${time}.zip" ;
+          If(!(test-path -PathType container "$(Split-Path "$path")"))
+          {
+            New-Item -ItemType Directory -Path "$(Split-Path "$path")" ;
+          }
+          $ExtensionsToExclude = "*.exe","*.pdf","*.tar","*.gz","*.zip" ;
+          $PathsToExclude      = "(.git|tmp|node_modules)" ;
+          Get-ChildItem `
+            -Recurse `
+            -Exclude $ExtensionsToExclude `
+            -Path "{{.ROOT_DIR}}" `
+          | Where-Object { $_.FullName -notmatch $PathsToExclude } `
+          | Compress-Archive -DestinationPath "$path" -Update ;
+          '
+        platforms: [windows]
+      - cmd: |
+          tmp="$(mktemp -d)" ;
+          time="$(date +'%Y-%m-%d-%H-%M')" ;
+          snapshot_dir="{{.ROOT_DIR}}/tmp/snapshots" ;
+          path="${snapshot_dir}/${time}.tar.gz" ;
+          sync ;
+          mkdir -p "${snapshot_dir}" ;
+          tar -C "{{.ROOT_DIR}}" --exclude-vcs -cpzf "${tmp}/${time}.tar.gz" .
+          mv "${tmp}/${time}.tar.gz" "${path}" ;
+          rm -rf "${tmp}" ;
+          gunzip --force "${path}" ;
+          exlude_list=(
+            "./.git/"
+            "./tmp"
+          ) ;
+          for path in "${exlude_list[@]}";do
+            if tar --list --file "${snapshot_dir}/${time}.tar" "${path}" > /dev/null 2>&1 ; then
+              tar \
+                --file "${snapshot_dir}/${time}.tar" \
+                --delete "${path}" ;
+            fi
+          done
+          gzip "${snapshot_dir}/${time}.tar" ;
+          echo "*** snapshot created at ${path}" ;
+        platforms: [linux, darwin]

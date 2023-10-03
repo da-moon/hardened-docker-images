@@ -199,3 +199,5 @@ repos:
           detects symlinks which are changed to regular files
           with a content of a path which that symlink was pointing
           to.
+      - id: end-of-file-fixer
+        name: end-of-file-fixer

@@ -151,3 +151,7 @@ repos:
           - --maxkb=1024
         description: >-
           prevents giant files from being committed.
+      - id: mixed-line-ending
+        name: mixed-line-ending
+        args:
+          - --fix=lf

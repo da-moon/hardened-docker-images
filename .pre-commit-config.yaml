@@ -28,3 +28,6 @@ repos:
           - commit-msg
         description: >-
           Ensure commit messages are signed
+  - repo: https://github.com/zricethezav/gitleaks
+    rev: v8.16.3
+    hooks: []

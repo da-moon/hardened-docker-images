@@ -70,3 +70,6 @@ repos:
           - .markdownlint.yaml
         description: >-
           Lint markdown Documents
+  - repo: https://github.com/syntaqx/git-hooks
+    rev: v0.0.17
+    hooks: []

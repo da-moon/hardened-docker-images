@@ -170,3 +170,5 @@ repos:
           detects the presence of private keys.
       - id: check-merge-conflict
         name: check-merge-conflict
+        description: >-
+          checks for files that contain merge conflict strings.

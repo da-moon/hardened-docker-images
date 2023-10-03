@@ -176,3 +176,5 @@ repos:
         name: fix-byte-order-marker
         description: >-
           removes utf-8 byte order marker.
+      - id: check-case-conflict
+        name: check-case-conflict

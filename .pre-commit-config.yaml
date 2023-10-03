@@ -11,3 +11,6 @@ repos:
           - '@commitlint/config-conventional'
         description: >-
           Ensure commit messages follow Conventional Commit spec
+  - repo: https://github.com/jorisroovers/gitlint
+    rev: v0.19.1
+    hooks: []

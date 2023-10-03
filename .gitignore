@@ -1,0 +1,66 @@
+*
+!*/
+#  ────────────────────────────────────────────────────────────────────
+!/assets/**
+!/docs/*/README.md
+!/contrib/shisho/*.shisho.yaml
+#  ────────────────────────────────────────────────────────────────────
+!/Makefile
+!/Taskfile.dist.yaml
+!/contrib/tasks/**/Taskfile.yaml
+#  ────────────────────────────────────────────────────────────────────
+!/**/.gitkeep
+#  ────────────────────────────────────────────────────────────────────
+!/modules/
+!/modules/.terraform-docs.yml
+!/modules/*/**/.tf
+!/modules/*/**/.tfvars
+!/modules/*/**/README.md
+!/modules/*/**/.env
+!/modules/*/**/*.go
+!/modules/*/**/go.mod
+!/modules/*/**/go.sum
+!/examples/**/*.tf
+!/examples/**/*.tfvars
+!/examples/**/*.env
+!/examples/*/*.md
+#  ────────────────────────────────────────────────────────────────────
+!/**/Makefile
+!/**/Taskfile.yaml
+#  ────────────────────────────────────────────────────────────────────
+!/.cspell/*.txt
+!/.vscode/**
+#  ────────────────────────────────────────────────────────────
+!/.devcontainer/**
+!/Vagrantfile
+!/docker-bake.hcl
+#  ────────────────────────────────────────────────────────────
+!/.github/CODEOWNERS
+!/.github/dependabot.yml
+!/.github/ISSUE_TEMPLATE/
+!/.github/ISSUE_TEMPLATE/*.md
+!/.github/workflows/*.yml
+!/.github/ISSUES/**.md
+!/.github/pull_request_template.md
+!/.github-labels.json
+#  ────────────────────────────────────────────────────────────────────
+!/cspell.config.yaml
+!/.yamlfmt
+!/commitlint.config.js
+!/.dockerignore
+!/.checkov.yaml
+!/.gitlint
+!/.gitleaks.toml
+!/.pre-commit-config.yaml
+!/.markdownlint.yaml
+!/.markdownlintignore
+!/.editorconfig
+!/.stignore
+!/.gitignore
+#  ────────────────────────────────────────────────────────────
+!/.versionrc
+!/LICENSE
+!/README.md
+!/CONTRIBUTING.md
+!/CHANGELOG.md
+!/todo.txt

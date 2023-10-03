@@ -63,3 +63,8 @@ repos:
         id: markdownlint-fix
         description: >-
           automatically fix markdown errors.
+      - name: markdownlint
+        id: markdownlint
+        args:
+          - -c
+          - .markdownlint.yaml

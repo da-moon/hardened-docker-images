@@ -149,3 +149,5 @@ repos:
         name: check-added-large-files
         args:
           - --maxkb=1024
+        description: >-
+          prevents giant files from being committed.

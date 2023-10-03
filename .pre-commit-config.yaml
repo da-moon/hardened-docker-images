@@ -102,3 +102,5 @@ repos:
           - --format
           - parsable
           - --strict
+        description: >-
+          Ensure YAML files are valid

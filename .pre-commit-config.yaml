@@ -33,3 +33,5 @@ repos:
     hooks:
       - name: gitleaks
         id: gitleaks
+        description: >-
+          Detect hardcoded secrets using Gitleaks

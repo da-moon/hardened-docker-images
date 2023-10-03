@@ -193,3 +193,5 @@ repos:
         name: check-symlinks
         description: >-
           checks for symlinks which do not point to anything.
+      - id: destroyed-symlinks
+        name: destroyed-symlinks

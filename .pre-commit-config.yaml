@@ -45,3 +45,6 @@ repos:
           Windows by default)
       - name: remove-crlf
         id: remove-crlf
+        description: >-
+          remove CRLF (carriage return) line endings (added in
+          Windows by default)

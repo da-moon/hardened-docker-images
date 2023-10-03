@@ -16,3 +16,5 @@ repos:
     hooks:
       - name: gitlint
         id: gitlint
+        description: >-
+          Lint git commit messages.

@@ -109,3 +109,5 @@ repos:
     hooks:
       - id: docker-compose-check
         name: docker-compose-check
+        description: >-
+          ensure validity of docker-compose files

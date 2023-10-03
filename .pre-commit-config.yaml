@@ -140,3 +140,5 @@ repos:
         alias: semgrep-docker
         args:
           - --config=auto
+        description: >-
+          Run checks against Terraform Dockerfiles with Semgrep

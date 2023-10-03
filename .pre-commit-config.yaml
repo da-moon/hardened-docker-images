@@ -134,4 +134,9 @@ repos:
           Fix some markdown formatting issues with Prettier
   - repo: https://github.com/returntocorp/semgrep
     rev: "v1.20.0"
-    hooks: []
+    hooks:
+      - id: semgrep
+        name: semgrep-docker
+        alias: semgrep-docker
+        args:
+          - --config=auto

@@ -185,3 +185,5 @@ repos:
         name: check-executables-have-shebangs
         description: >-
           ensures that (non-binary) executables have a shebang.
+      - id: check-shebang-scripts-are-executable
+        name: check-shebang-scripts-are-executable

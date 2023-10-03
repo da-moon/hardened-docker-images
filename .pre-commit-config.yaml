@@ -183,3 +183,5 @@ repos:
           filesystems.
       - id: check-executables-have-shebangs
         name: check-executables-have-shebangs
+        description: >-
+          ensures that (non-binary) executables have a shebang.

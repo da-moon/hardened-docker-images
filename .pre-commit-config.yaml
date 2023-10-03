@@ -206,3 +206,5 @@ repos:
           newline.
       - id: check-json
         name: check-json
+        description: >-
+          ensures that JSON files are parseable.

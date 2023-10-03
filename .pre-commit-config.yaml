@@ -157,3 +157,7 @@ repos:
           - --fix=lf
         description: >-
           replaces or checks mixed line ending.
+      - id: trailing-whitespace
+        name: trailing-whitespace
+        args:
+          - --markdown-linebreak-ext=md

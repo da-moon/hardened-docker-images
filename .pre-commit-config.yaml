@@ -144,4 +144,8 @@ repos:
           Run checks against Terraform Dockerfiles with Semgrep
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
-    hooks: []
+    hooks:
+      - id: check-added-large-files
+        name: check-added-large-files
+        args:
+          - --maxkb=1024

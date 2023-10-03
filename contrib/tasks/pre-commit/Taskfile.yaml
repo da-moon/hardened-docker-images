@@ -1,0 +1,20 @@
+---
+version: '3'
+tasks:
+  install:
+    aliases: [pre-commit-init, init]
+    cmds:
+      - cmd: pre-commit install --hook-type commit-msg ;
+      - cmd: pre-commit install ;
+      - cmd: pre-commit install --install-hooks ;
+    status:
+      - '[ -r .git/hooks/pre-commit ] && exit 0 || exit 1'
+    preconditions:
+      - sh: python3 --version
+        msg: '`python3` was not found in PATH'
+      - sh: pre-commit --version
+        msg: |
+          `pre-commit` was not found in PATH
+
+          Install it through your OS package manager or by running:
+            python3 -m pip install pre-commit

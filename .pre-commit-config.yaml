@@ -168,3 +168,5 @@ repos:
         exclude: .gitleaks.toml
         description: >-
           detects the presence of private keys.
+      - id: check-merge-conflict
+        name: check-merge-conflict

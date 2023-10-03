@@ -48,3 +48,6 @@ repos:
         description: >-
           remove CRLF (carriage return) line endings (added in
           Windows by default)
+  - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
+    rev: 2.7.1
+    hooks: []

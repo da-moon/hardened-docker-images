@@ -155,3 +155,5 @@ repos:
         name: mixed-line-ending
         args:
           - --fix=lf
+        description: >-
+          replaces or checks mixed line ending.

@@ -1,0 +1,6 @@
+# vim: filetype=yaml syntax=yaml softtabstop=2 tabstop=2 shiftwidth=2 fileencoding=utf-8 expandtab autoindent smartindent
+# code: language=yaml insertSpaces=true tabSize=2
+formatter:
+  type: basic
+  include_document_start: true
+  max_line_length: 60

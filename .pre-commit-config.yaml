@@ -2,4 +2,10 @@
 repos:
   - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
     rev: v9.5.0
-    hooks: []
+    hooks:
+      - name: commitlint
+        id: commitlint
+        stages:
+          - commit-msg
+        additional_dependencies:
+          - '@commitlint/config-conventional'

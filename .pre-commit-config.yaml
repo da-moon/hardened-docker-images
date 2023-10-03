@@ -54,3 +54,5 @@ repos:
       - name: editorconfig-checker
         id: editorconfig-checker
         exclude: CHANGELOG.md
+        description: >-
+          Ensure files are consistent with .editorconfig

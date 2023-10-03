@@ -132,3 +132,6 @@ repos:
         files: \.(md|mdown|markdown)$
         description: >-
           Fix some markdown formatting issues with Prettier
+  - repo: https://github.com/returntocorp/semgrep
+    rev: "v1.20.0"
+    hooks: []

@@ -1,0 +1,14 @@
+[general]
+# Ignore certain rules, this example uses both full name and id
+ignore=body-is-missing,body-min-length,title-max-length,body-max-line-length
+ignore-merge-commits=true
+ignore-revert-commits=true
+ignore-fixup-commits=true
+ignore-squash-commits=true
+# Ignore any data send to gitlint via stdin
+ignore-stdin=true
+# tells gitlint to fail on *valid but empty* commit ranges.
+fail-without-commits=true
+contrib=contrib-title-conventional-commits
+[contrib-title-conventional-commits]
+types = feat,fix,docs,style,refactor,test,chore,perf,build,ci,revert

@@ -217,3 +217,5 @@ repos:
         exclude: .*docker-compose.*
         args:
           - --allow-multiple-documents
+        description: >-
+          ensures that YAML files are parseable.

@@ -79,3 +79,5 @@ repos:
           Check shell style with shfmt
       - name: shellcheck
         id: shellcheck
+        description: >-
+          Shell scripts conform to shellcheck

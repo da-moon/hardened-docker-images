@@ -8,7 +8,7 @@ repos:
         stages:
           - commit-msg
         additional_dependencies:
-          - '@commitlint/config-conventional'
+          - "@commitlint/config-conventional"
         description: >-
           Ensure commit messages follow Conventional Commit spec
   - repo: https://github.com/jorisroovers/gitlint
@@ -138,6 +138,7 @@ repos:
       - id: semgrep
         name: semgrep-docker
         alias: semgrep-docker
+        types: ["dockerfile"]
         args:
           - --config=auto
         description: >-

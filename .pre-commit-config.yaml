@@ -68,3 +68,5 @@ repos:
         args:
           - -c
           - .markdownlint.yaml
+        description: >-
+          Lint markdown Documents

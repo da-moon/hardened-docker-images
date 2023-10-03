@@ -37,4 +37,6 @@ repos:
           Detect hardcoded secrets using Gitleaks
   - repo: https://github.com/Lucas-C/pre-commit-hooks
     rev: v1.5.1
-    hooks: []
+    hooks:
+      - name: forbid-crlf
+        id: forbid-crlf

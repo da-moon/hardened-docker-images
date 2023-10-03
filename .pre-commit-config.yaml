@@ -189,3 +189,5 @@ repos:
         name: check-shebang-scripts-are-executable
         description: >-
           ensures that (non-binary) files with a shebang are executable
+      - id: check-symlinks
+        name: check-symlinks

@@ -40,3 +40,6 @@ repos:
     hooks:
       - name: forbid-crlf
         id: forbid-crlf
+        description: >-
+          forbid CRLF (carriage return) line endings (added in
+          Windows by default)

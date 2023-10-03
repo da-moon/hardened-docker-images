@@ -75,3 +75,5 @@ repos:
     hooks:
       - name: shfmt
         id: shfmt
+        description: >-
+          Check shell style with shfmt

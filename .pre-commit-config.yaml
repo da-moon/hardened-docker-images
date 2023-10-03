@@ -119,3 +119,6 @@ repos:
         entry: hadolint/hadolint hadolint
         description: >-
           Lint Dockerfiles with hadolint
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: "v3.0.0-alpha.9-for-vscode"
+    hooks: []

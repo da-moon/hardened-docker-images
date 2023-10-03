@@ -130,3 +130,5 @@ repos:
           - --prose-wrap=always
           - --parser=markdown
         files: \.(md|mdown|markdown)$
+        description: >-
+          Fix some markdown formatting issues with Prettier

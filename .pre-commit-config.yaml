@@ -174,3 +174,5 @@ repos:
           checks for files that contain merge conflict strings.
       - id: fix-byte-order-marker
         name: fix-byte-order-marker
+        description: >-
+          removes utf-8 byte order marker.

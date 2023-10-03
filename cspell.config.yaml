@@ -1,0 +1,11 @@
+---
+dictionaryDefinitions:
+  - name: generic
+    path: ./.cspell/generic.txt
+    addWords: true
+dictionaries:
+  - generic
+ignorePaths:
+  - ./.cspell/*
+  - ./.vscode/*
+  - ./.devcontainer/*

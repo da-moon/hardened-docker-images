@@ -1,2 +1,7 @@
 # hardened-docker-images
-Hardened Docker images collection with minimal CVE vulnerabilities
+
+## Overview
+
+Hardened Docker images collection with minimal CVE vulnerabilities. These
+images are mostly based on
+[`Chainguard`](https://www.chainguard.dev/chainguard-images) Docker images

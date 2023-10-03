@@ -50,4 +50,7 @@ repos:
           Windows by default)
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: 2.7.1
-    hooks: []
+    hooks:
+      - name: editorconfig-checker
+        id: editorconfig-checker
+        exclude: CHANGELOG.md

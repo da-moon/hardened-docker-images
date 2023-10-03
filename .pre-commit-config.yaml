@@ -94,4 +94,11 @@ repos:
           Ensure YAML files are formatted
   - repo: https://github.com/adrienverge/yamllint.git
     rev: v1.31.0
-    hooks: []
+    hooks:
+      - id: yamllint
+        name: yamllint
+        exclude: .*docker-compose.*|Taskfile.*.yaml
+        args:
+          - --format
+          - parsable
+          - --strict

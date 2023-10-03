@@ -61,3 +61,5 @@ repos:
     hooks:
       - name: markdownlint-fix
         id: markdownlint-fix
+        description: >-
+          automatically fix markdown errors.

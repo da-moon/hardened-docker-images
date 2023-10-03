@@ -181,3 +181,5 @@ repos:
         description: >-
           checks for files that would conflict in case-insensitive
           filesystems.
+      - id: check-executables-have-shebangs
+        name: check-executables-have-shebangs

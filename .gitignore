@@ -3,7 +3,9 @@
 #  ────────────────────────────────────────────────────────────────────
 !/assets/**
 !/docs/*/README.md
-!/contrib/shisho/*.shisho.yaml
+!/shisho/*.shisho.yaml
+!/docker/**/README.md
+!/docker/**/Dockerfile
 #  ────────────────────────────────────────────────────────────────────
 !/Makefile
 !/Taskfile.dist.yaml

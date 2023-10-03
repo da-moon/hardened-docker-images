@@ -204,3 +204,5 @@ repos:
         description: >-
           ensures that a file is either empty, or ends with one
           newline.
+      - id: check-json
+        name: check-json

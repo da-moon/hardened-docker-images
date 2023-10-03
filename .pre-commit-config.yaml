@@ -26,3 +26,5 @@ repos:
         language_version: 3.1.0
         stages:
           - commit-msg
+        description: >-
+          Ensure commit messages are signed

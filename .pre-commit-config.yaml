@@ -106,4 +106,6 @@ repos:
           Ensure YAML files are valid
   - repo: https://github.com/IamTheFij/docker-pre-commit
     rev: v3.0.1
-    hooks: []
+    hooks:
+      - id: docker-compose-check
+        name: docker-compose-check

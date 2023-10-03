@@ -81,3 +81,6 @@ repos:
         id: shellcheck
         description: >-
           Shell scripts conform to shellcheck
+  - repo: https://github.com/google/yamlfmt
+    rev: v0.9.0
+    hooks: []

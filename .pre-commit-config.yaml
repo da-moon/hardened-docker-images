@@ -178,3 +178,6 @@ repos:
           removes utf-8 byte order marker.
       - id: check-case-conflict
         name: check-case-conflict
+        description: >-
+          checks for files that would conflict in case-insensitive
+          filesystems.

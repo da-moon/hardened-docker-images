@@ -163,3 +163,6 @@ repos:
           - --markdown-linebreak-ext=md
         description: >-
           trims trailing whitespace.
+      - id: detect-private-key
+        name: detect-private-key
+        exclude: .gitleaks.toml

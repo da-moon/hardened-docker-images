@@ -191,3 +191,5 @@ repos:
           ensures that (non-binary) files with a shebang are executable
       - id: check-symlinks
         name: check-symlinks
+        description: >-
+          checks for symlinks which do not point to anything.

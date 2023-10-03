@@ -117,3 +117,5 @@ repos:
       - id: hadolint-docker
         name: hadolint-docker
         entry: hadolint/hadolint hadolint
+        description: >-
+          Lint Dockerfiles with hadolint

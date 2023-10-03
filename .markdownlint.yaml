@@ -1,0 +1,29 @@
+---
+# schema:
+# https://github.com/DavidAnson/markdownlint/blob/main/schema/.markdownlint.yaml
+
+# Default state for all rules
+default: true
+# MD003/heading-style/header-style - Heading style
+MD003:
+  # Heading style
+  style: "consistent"
+# MD004/ul-style - Unordered list style
+MD004:
+  # List style
+  style: "dash"
+# MD007/ul-indent - Unordered list indentation
+MD007:
+  # Spaces for indent
+  indent: 2
+# MD013/line-length - Line length
+MD013:
+  # Number of characters
+  line_length: 80
+  # Include code blocks
+  code_blocks: false
+  # Include tables
+  tables: false
+# disable inline-html rule as terraform-docs generates markdown files with
+# inline html
+MD033: false

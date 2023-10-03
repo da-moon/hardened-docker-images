@@ -208,3 +208,5 @@ repos:
         name: check-json
         description: >-
           ensures that JSON files are parseable.
+      - id: check-toml
+        name: check-toml

@@ -9,3 +9,5 @@ repos:
           - commit-msg
         additional_dependencies:
           - '@commitlint/config-conventional'
+        description: >-
+          Ensure commit messages follow Conventional Commit spec

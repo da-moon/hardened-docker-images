@@ -90,3 +90,5 @@ repos:
         args:
           - -conf
           - .yamlfmt
+        description: >-
+          Ensure YAML files are formatted

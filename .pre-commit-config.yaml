@@ -166,3 +166,5 @@ repos:
       - id: detect-private-key
         name: detect-private-key
         exclude: .gitleaks.toml
+        description: >-
+          detects the presence of private keys.

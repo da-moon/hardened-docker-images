@@ -13,4 +13,6 @@ repos:
           Ensure commit messages follow Conventional Commit spec
   - repo: https://github.com/jorisroovers/gitlint
     rev: v0.19.1
-    hooks: []
+    hooks:
+      - name: gitlint
+        id: gitlint

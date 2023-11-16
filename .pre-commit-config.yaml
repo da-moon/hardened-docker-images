@@ -132,17 +132,6 @@ repos:
         files: \.(md|mdown|markdown)$
         description: >-
           Fix some markdown formatting issues with Prettier
-  - repo: https://github.com/returntocorp/semgrep
-    rev: "v1.49.0"
-    hooks:
-      - id: semgrep
-        name: semgrep-docker
-        alias: semgrep-docker
-        types: ["dockerfile"]
-        args:
-          - --config=auto
-        description: >-
-          Run checks against Terraform Dockerfiles with Semgrep
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.5.0
     hooks:

@@ -1,7 +1,7 @@
 ---
 repos:
   - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
-    rev: v9.5.0
+    rev: v9.9.0
     hooks:
       - name: commitlint
         id: commitlint
@@ -29,14 +29,14 @@ repos:
         description: >-
           Ensure commit messages are signed
   - repo: https://github.com/zricethezav/gitleaks
-    rev: v8.16.3
+    rev: v8.18.0
     hooks:
       - name: gitleaks
         id: gitleaks
         description: >-
           Detect hardcoded secrets using Gitleaks
   - repo: https://github.com/Lucas-C/pre-commit-hooks
-    rev: v1.5.1
+    rev: v1.5.4
     hooks:
       - name: forbid-crlf
         id: forbid-crlf
@@ -49,7 +49,7 @@ repos:
           remove CRLF (carriage return) line endings (added in
           Windows by default)
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 2.7.1
+    rev: 2.7.3
     hooks:
       - name: editorconfig-checker
         id: editorconfig-checker
@@ -57,7 +57,7 @@ repos:
         description: >-
           Ensure files are consistent with .editorconfig
   - repo: https://github.com/igorshubovych/markdownlint-cli
-    rev: v0.34.0
+    rev: v0.37.0
     hooks:
       - name: markdownlint-fix
         id: markdownlint-fix
@@ -71,7 +71,7 @@ repos:
         description: >-
           Lint markdown Documents
   - repo: https://github.com/syntaqx/git-hooks
-    rev: v0.0.17
+    rev: v0.0.18
     hooks:
       - name: shfmt
         id: shfmt
@@ -82,7 +82,7 @@ repos:
         description: >-
           Shell scripts conform to shellcheck
   - repo: https://github.com/google/yamlfmt
-    rev: v0.9.0
+    rev: v0.10.0
     hooks:
       - name: yamlfmt
         id: yamlfmt
@@ -93,7 +93,7 @@ repos:
         description: >-
           Ensure YAML files are formatted
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.31.0
+    rev: v1.33.0
     hooks:
       - id: yamllint
         name: yamllint
@@ -120,7 +120,7 @@ repos:
         description: >-
           Lint Dockerfiles with hadolint
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: "v3.0.0-alpha.9-for-vscode"
+    rev: "v3.1.0"
     hooks:
       - id: prettier
         name: prettier-markdown
@@ -133,7 +133,7 @@ repos:
         description: >-
           Fix some markdown formatting issues with Prettier
   - repo: https://github.com/returntocorp/semgrep
-    rev: "v1.20.0"
+    rev: "v1.49.0"
     hooks:
       - id: semgrep
         name: semgrep-docker
@@ -144,7 +144,7 @@ repos:
         description: >-
           Run checks against Terraform Dockerfiles with Semgrep
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: check-added-large-files
         name: check-added-large-files

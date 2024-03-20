@@ -59,7 +59,12 @@ github.com/docker/buildx 0.13.1 788433953af10f2a698f5c07611dddce2e08c7a0
   installed
 
 ```console
-
+λ docker sbom version
+Application:        docker-sbom ([not provided])
+Provider:           syft (v0.46.3)
+GitCommit:          [not provided]
+GitDescription:     [not provided]
+Platform:           linux/amd64
 ```
 
 - Build the image without pushing it to remote

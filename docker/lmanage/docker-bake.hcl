@@ -18,7 +18,6 @@
 # │                     cleanup builder                      │
 # ╰──────────────────────────────────────────────────────────╯
 # docker buildx use default && docker buildx ls | awk '$2 ~ /^docker(-container)*$/{print $1}' | xargs -r -I {} docker buildx rm {}
-#
 # ╭──────────────────────────────────────────────────────────╮
 # │                    commmon variables                     │
 # ╰──────────────────────────────────────────────────────────╯

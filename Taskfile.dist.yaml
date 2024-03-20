@@ -2,11 +2,14 @@
 version: "3"
 env:
   WORKING_DIR: '{{.WORKING_DIR | default "."}}'
-dotenv: [.env]
+# dotenv: [.env]
 includes:
   pre-commit:
     taskfile: "./contrib/tasks/pre-commit/Taskfile.yaml"
     aliases: [pc]
+  utils:
+    taskfile: ./contrib/tasks/utils/Taskfile.yaml
+    internal: true
 # ──────────────────────────────────────────────────────────────────────────────
 tasks:
   default:
@@ -14,50 +17,21 @@ tasks:
     deps:
       - pre-commit:install
     cmds:
-      - cmd: |
-          powershell -c '
-            if (-not (Get-Command "fzf" -ErrorAction SilentlyContinue)) {
-              task --list-all ;
-            } else {
-              $chosen=$(task --json --list-all `
-                | ConvertFrom-Json `
-                | Select-Object -ExpandProperty tasks `
-                | ForEach-Object { $_.name } | fzf);
-              if ( "$chosen" ) {
-                task "$chosen";
-              } else {
-                task --list-all ;
-              }
-            }'
-        platforms: [windows]
-      - cmd: |
-          # if 'fzf' or 'jq' are not available
-          ! ( \
-              fzf --version > /dev/null 2>&1 \
-              && jq --version > /dev/null 2>&1 \
-            ) && (task --list-all ; exit $?;)
-          chosen="$(task --list-all --json | jq -r '.tasks[].name' | fzf)";
-          if [ "${chosen}" != "" ]; then
-            task "${chosen}" ;
-            exit $? ;
-          fi
-        platforms: [linux, darwin]
+      - task: utils:default
   clean:
     aliases: [c]
-    deps: ['terraform:clean']
     cmds:
-      - cmd: |
-          rm -rf ".task" ;
-        platforms: [linux, darwin]
-      - cmd: |
-          powershell -c '
-          if (Test-Path -PathType container -Path ".task" ) {Remove-Item ".task" -Recurse -Force ;}
-          if (Test-Path -PathType container -Path "tmp" ) {Remove-Item "tmp" -Recurse -Force ;}
-          '
-        platforms: [windows]
+      - task: utils:trash
+        for:
+          - "*.spdx.json"
+        vars:
+          TARGET_PATH: "{{.ITEM}}"
+      - defer: {task: "utils:trash"}
+        vars:
+          TARGET_PATH: ".task"
   snapshot:
     aliases: [s]
-    deps: [clean]
+    # deps: [clean]
     cmds:
       - cmd: |
           powershell -c '

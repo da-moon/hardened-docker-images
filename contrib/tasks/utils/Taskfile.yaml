@@ -1,0 +1,75 @@
+---
+# NOTE: this taskfile contains a collection of utility tasks, meant to be used in other taskfiles
+version: "3"
+tasks:
+  default:
+    silent: true
+    cmds:
+      - cmd: |
+          powershell -c '
+            if (-not (Get-Command "fzf" -ErrorAction SilentlyContinue)) {
+              task --list-all ;
+            } else {
+              $chosen=$(task --json --list-all `
+                | ConvertFrom-Json `
+                | Select-Object -ExpandProperty tasks `
+                | ForEach-Object { $_.name } | fzf);
+              if ( "$chosen" ) {
+                task "$chosen";
+              } else {
+                task --list-all ;
+              }
+            }'
+        platforms: [windows]
+      - cmd: |
+          # if 'fzf' or 'jq' are not available
+          ! ( \
+              fzf --version > /dev/null 2>&1 \
+              && jq --version > /dev/null 2>&1 \
+            ) && (task --list-all ; exit $?;)
+          chosen="$(task --list-all --json | jq -r '.tasks[].name' | fzf)";
+          if [ "${chosen}" != "" ]; then
+            task "${chosen}" ;
+            exit $? ;
+          fi
+        platforms: [linux, darwin]
+  # ──────────────────────────────────────────────────────────────────────────────
+  trash:
+    aliases: [t]
+    cmds:
+      - cmd: |
+          [ -d "{{.TARGET_PATH}}" ] && find . -type d -name "{{.TARGET_PATH}}" -exec trash {} \; 2>/dev/null || true;
+          [ -r "{{.TARGET_PATH}}" ] && find . -type f -name "{{.TARGET_PATH}}" -exec trash {} \; 2>/dev/null || true;
+        platforms: [linux, darwin]
+      - cmd: |
+          powershell -c '
+          Add-Type -AssemblyName Microsoft.VisualBasic
+          function Remove-Item-ToRecycleBin($Path) {
+              $item = Get-Item -Path $Path -ErrorAction SilentlyContinue
+              if ($item -eq $null)
+              {
+                  Write-Error("'{0}' not found" -f $Path)
+              }
+              else
+              {
+                  $fullpath=$item.FullName
+                  Write-Verbose ("Moving '{0}' to the Recycle Bin" -f $fullpath)
+                  if (Test-Path -Path $fullpath -PathType Container)
+                  {
+                      [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteDirectory($fullpath,'OnlyErrorDialogs','SendToRecycleBin')
+                  }
+                  else
+                  {
+                      [Microsoft.VisualBasic.FileIO.FileSystem]::DeleteFile($fullpath,'OnlyErrorDialogs','SendToRecycleBin')
+                  }
+              }
+          }
+          Get-ChildItem -Path "." -Filter "{{.TARGET_PATH}}" -Recurse -Force -ErrorAction SilentlyContinue | ForEach-Object { Remove-Item-ToRecycleBin $_.FullName }
+          '
+        platforms: [windows]
+    preconditions:
+      - msg: "`trash` binary (trash-cli) was not found in PATH"
+        sh: |
+          {{if ne OS "windows"}}
+          trash --version
+          {{end}}

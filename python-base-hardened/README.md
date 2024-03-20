@@ -11,15 +11,15 @@ specific version of python (e.g `3.10`) with `pyenv` in a hardened Docker image
 ## vulnerability Scan
 
 ```console
-λ snyk container test --file="Dockerfile" "fjolsvin/wolfi-python-3.10:latest"
+λ snyk container test --file="Dockerfile" "fjolsvin/python-base-hardened:latest"
 
-Testing fjolsvin/wolfi-python-3.10:latest...
+Testing fjolsvin/python-base-hardened:latest...
 
 Organization:      fjolsvin
 Package manager:   apk
 Target file:       Dockerfile
-Project name:      docker-image|fjolsvin/wolfi-python-3.10
-Docker image:      fjolsvin/wolfi-python-3.10:latest
+Project name:      docker-image|fjolsvin/python-base-hardened
+Docker image:      fjolsvin/python-base-hardened:latest
 Platform:          linux/amd64
 Base image:        cgr.dev/chainguard/python:latest-dev
 Licenses:          enabled
@@ -30,16 +30,16 @@ Currently, we only offer base image recommendations for Official Docker images
 
 -------------------------------------------------------
 
-Testing fjolsvin/wolfi-python-3.10:latest...
+Testing fjolsvin/python-base-hardened:latest...
 
 Organization:      fjolsvin
 Package manager:   pip
 Target file:       /home/nonroot/.pyenv/plugins/python-build/scripts/requirements.txt
 Project name:      /home/nonroot/.pyenv/plugins/python-build/scripts/requirements.txt
-Docker image:      fjolsvin/wolfi-python-3.10:latest
+Docker image:      fjolsvin/python-base-hardened:latest
 Licenses:          enabled
 
-✔ Tested fjolsvin/wolfi-python-3.10:latest for known issues, no vulnerable paths found.
+✔ Tested fjolsvin/python-base-hardened:latest for known issues, no vulnerable paths found.
 
 
 Tested 2 projects, no vulnerable paths were found.

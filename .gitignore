@@ -13,20 +13,6 @@
 #  ────────────────────────────────────────────────────────────────────
 !/**/.gitkeep
 #  ────────────────────────────────────────────────────────────────────
-!/modules/
-!/modules/.terraform-docs.yml
-!/modules/*/**/.tf
-!/modules/*/**/.tfvars
-!/modules/*/**/README.md
-!/modules/*/**/.env
-!/modules/*/**/*.go
-!/modules/*/**/go.mod
-!/modules/*/**/go.sum
-!/examples/**/*.tf
-!/examples/**/*.tfvars
-!/examples/**/*.env
-!/examples/*/*.md
-#  ────────────────────────────────────────────────────────────────────
 !/**/Makefile
 !/**/Taskfile.yaml
 #  ────────────────────────────────────────────────────────────────────
@@ -50,7 +36,6 @@
 !/.yamlfmt
 !/commitlint.config.js
 !/.dockerignore
-!/.checkov.yaml
 !/.gitlint
 !/.gitleaks.toml
 !/.pre-commit-config.yaml

@@ -11,35 +11,35 @@ specific version of python (e.g `3.10`) with `pyenv` in a hardened Docker image
 ## vulnerability Scan
 
 ```console
-λ snyk container test --file="Dockerfile" "fjolsvin/python-base-hardened:latest"
+λ snyk container test --file="Dockerfile" "python-base-hardened:latest"
 
-Testing fjolsvin/python-base-hardened:latest...
+Testing python-base-hardened:latest...
 
-Organization:      fjolsvin
+Organization:      REDACTED
 Package manager:   apk
 Target file:       Dockerfile
-Project name:      docker-image|fjolsvin/python-base-hardened
-Docker image:      fjolsvin/python-base-hardened:latest
+Project name:      docker-image|python-base-hardened
+Docker image:      python-base-hardened:latest
 Platform:          linux/amd64
 Base image:        cgr.dev/chainguard/python:latest-dev
 Licenses:          enabled
 
-✔ Tested 75 dependencies for known issues, no vulnerable paths found.
+✔ Tested 70 dependencies for known issues, no vulnerable paths found.
 
 Currently, we only offer base image recommendations for Official Docker images
 
 -------------------------------------------------------
 
-Testing fjolsvin/python-base-hardened:latest...
+Testing python-base-hardened:latest...
 
-Organization:      fjolsvin
+Organization:      REDACTED
 Package manager:   pip
-Target file:       /home/nonroot/.pyenv/plugins/python-build/scripts/requirements.txt
-Project name:      /home/nonroot/.pyenv/plugins/python-build/scripts/requirements.txt
-Docker image:      fjolsvin/python-base-hardened:latest
+Target file:       /opt/pyenv/plugins/python-build/scripts/requirements.txt
+Project name:      /opt/pyenv/plugins/python-build/scripts/requirements.txt
+Docker image:      python-base-hardened:latest
 Licenses:          enabled
 
-✔ Tested fjolsvin/python-base-hardened:latest for known issues, no vulnerable paths found.
+✔ Tested python-base-hardened:latest for known issues, no vulnerable paths found.
 
 
 Tested 2 projects, no vulnerable paths were found.

@@ -80,7 +80,7 @@ curl -fSsL "https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-instal
 && cp -r "${PYENV_ROOT}/versions/${PYENV_VERSION}"* "${HOME}/pyenv"
 # ──────────────────────────────────────────────────────────────────────────────
 # hadolint ignore=DL3007
-FROM "cgr.dev/chainguard/python:latest-dev"
+FROM "cgr.dev/chainguard/python:latest"
 USER "nonroot"
 VOLUME "/workspace"
 WORKDIR "/workspace"

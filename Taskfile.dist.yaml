@@ -7,6 +7,9 @@ includes:
   pre-commit:
     taskfile: "./contrib/tasks/pre-commit/Taskfile.yaml"
     aliases: [pc]
+  docker:
+    taskfile: "./contrib/tasks/docker/Taskfile.yaml"
+    aliases: [d]
   utils:
     taskfile: ./contrib/tasks/utils/Taskfile.yaml
     internal: true

@@ -2,8 +2,9 @@
 
 ## Overview
 
-This image demonstrates how to securely build and package a typical Go
-application in a zero CVE vulnerability Docker image pipeline.
+This image builds and packages Aquasecurity `Trivy` . It is presented here to
+demonstrate how to securely build and package a typical Go application in a
+zero CVE vulnerability Docker image pipeline.
 
 - Ensuring a completely static build without depending on `CGO` runtime
 - Compressing the binary

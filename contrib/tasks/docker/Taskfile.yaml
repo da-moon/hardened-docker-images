@@ -1,0 +1,12 @@
+---
+version: "3"
+tasks:
+  prune-cache:
+    aliases: [prune, clean-cache, cc]
+    cmds:
+      - cmd: docker builder prune --all --force ;
+    preconditions:
+      - sh: docker --version
+        msg: "`docker` was not found in PATH"
+      - sh: docker buildx version
+        msg: "`docker buildx` was not found in PATH"

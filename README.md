@@ -90,6 +90,9 @@ Memory: 5581MiB / 15578MiB
 - [`lmanage`](./lmanage/README.md): Demonstrate how to use `Poetry` to package
   a Python application that depends on a **specific** python version as a
   single `pex` executable while maintaining zero CVE vulnerabilities
+- [`checkov`](./checkov/README.md): Demonstrate how to package general pip
+  applications in a hardened base layer that does not contain any shells (e.g
+  `bash`) other than `python` interpreter.
 
 ### Powershell
 

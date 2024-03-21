@@ -2,7 +2,8 @@
 
 ## Overview
 
-An example of a hardened image for setting up a Dockerized Python packaging
+This image builds and packages `LManage` cli. It is presented here to
+demonstrate how to create a hardened python application build and packaging
 pipeline
 
 - `Poetry` for build system and dependency management

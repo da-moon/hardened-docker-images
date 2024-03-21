@@ -8,8 +8,13 @@ tasks:
     preconditions:
       - sh: docker --version
         msg: "`docker` was not found in PATH"
-      - sh: docker buildx version
-        msg: "`docker buildx` was not found in PATH"
+  clear-containers:
+    aliases: [clean-containers]
+    cmds:
+      - cmd: docker rm -f $(docker ps -aq) ;
+    preconditions:
+      - sh: docker --version
+        msg: "`docker` was not found in PATH"
   prune-cache:
     aliases: [prune, clean-cache, cc]
     cmds:

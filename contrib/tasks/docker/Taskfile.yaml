@@ -24,3 +24,12 @@ tasks:
         msg: "`docker` was not found in PATH"
       - sh: docker buildx version
         msg: "`docker buildx` was not found in PATH"
+  clear-builders:
+    aliases: [clean-builders, prune-builders, cb]
+    cmds:
+      - cmd: docker buildx rm --all-inactive --force ;
+    preconditions:
+      - sh: docker --version
+        msg: "`docker` was not found in PATH"
+      - sh: docker buildx version
+        msg: "`docker buildx` was not found in PATH"

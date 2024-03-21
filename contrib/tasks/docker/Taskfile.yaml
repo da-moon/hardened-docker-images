@@ -30,8 +30,10 @@ tasks:
     aliases: [clean-builders, prune-builders, cb]
     cmds:
       - cmd: docker buildx use default ;
+      # TODO: address the following potential error
+      # ERROR: no builder "..." found
       - cmd: docker buildx stop $(basename -s.git "$(git remote
-          get-url origin)") ;
+          get-url origin)") || true ;
         platforms: [linux, darwin]
     preconditions:
       - sh: git --version
@@ -44,6 +46,19 @@ tasks:
     aliases: [clean-builders, prune-builders, cb]
     cmds:
       - cmd: docker buildx rm --all-inactive --force ;
+    preconditions:
+      - sh: docker --version
+        msg: "`docker` was not found in PATH"
+      - sh: docker buildx version
+        msg: "`docker buildx` was not found in PATH"
+  clean:
+    aliases: [c]
+    cmds:
+      - task: switch-default-builder-context
+      - task: clear-containers
+      - task: clear-images
+      - task: prune-cache
+      - task: clear-builders
     preconditions:
       - sh: docker --version
         msg: "`docker` was not found in PATH"

@@ -5,6 +5,7 @@
   - [Images](#images)
     - [Python](#python)
     - [Powershell](#powershell)
+    - [Go](#go)
 
 ## Overview
 
@@ -29,3 +30,9 @@ patterns for creating images with **zero** CVE vulnerabilities.
   hardened Powershell image with zero CVE vulnerabilities. This image can be
   used base layer for other images that rely on PowerShell modules (e.g
   VMWare's `PowerCLI`)
+
+### Go
+
+- [`trivy`](./trivy/README.md): demonstrates a secure typical Go application
+  build, compress and package pipeline that creates a minimal compressed binary
+  , packaged in `scratch` final layer to ensure safety and security of runtime.

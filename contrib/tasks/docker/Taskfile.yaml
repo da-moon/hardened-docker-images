@@ -1,6 +1,15 @@
 ---
 version: "3"
 tasks:
+  clear-images:
+    aliases: [clean-images, ci]
+    cmds:
+      - cmd: docker rmi -f $(docker images -aq) ;
+    preconditions:
+      - sh: docker --version
+        msg: "`docker` was not found in PATH"
+      - sh: docker buildx version
+        msg: "`docker buildx` was not found in PATH"
   prune-cache:
     aliases: [prune, clean-cache, cc]
     cmds:

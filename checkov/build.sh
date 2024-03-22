@@ -23,6 +23,6 @@ export IMAGE_NAME
 BUILDER="$(basename -s.git "$(git remote get-url origin)")"
 ! docker buildx inspect "${BUILDER}" 2>/dev/null && docker buildx create --bootstrap --name "${BUILDER}" --driver "docker-container"
 docker buildx use "${BUILDER}"
-docker buildx bake --set "default.args.UID=$(id -u)" --set "default.args.GID=$(id -g)" --set "default.args.LOOKERSDK_BASE_URL=$(pass looker/url)"
+docker buildx bake
 docker sbom --format "spdx-json" --output "${IMAGE_NAME}.spdx.json" "${IMAGE_NAME}"
 popd >/dev/null 2>&1

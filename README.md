@@ -99,6 +99,9 @@ Memory: 5581MiB / 15578MiB
 - [`powershell-base-hardened`](./powershell-base-hardened/README.md): example
   hardened Powershell image with zero CVE vulnerabilities. This image can be
   used base layer for other images that rely on PowerShell modules
+- [`powercli`](./powercli/README.md): example hardened Powershell image that
+  includes VMWare's `PowerCLI`. Here, I am presenting an alternative pattern
+  for directly installing Powershell modules from `nupkg` files
 
 ### Go
 

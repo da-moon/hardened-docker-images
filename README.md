@@ -98,11 +98,13 @@ Memory: 5581MiB / 15578MiB
 
 - [`powershell-base-hardened`](./powershell-base-hardened/README.md): example
   hardened Powershell image with zero CVE vulnerabilities. This image can be
-  used base layer for other images that rely on PowerShell modules (e.g
-  VMWare's `PowerCLI`)
+  used base layer for other images that rely on PowerShell modules
 
 ### Go
 
 - [`trivy`](./trivy/README.md): demonstrates a secure typical Go application
   build, compress and package pipeline that creates a minimal compressed binary
   , packaged in `scratch` final layer to ensure safety and security of runtime.
+- [`nomad`](./nomad/README.md): demonstrates a more complicated build pipeline
+  that is required for a minority of Go applications; in most cases following
+  the pattern in [`trivy`](./trivy/README.md) should be enough

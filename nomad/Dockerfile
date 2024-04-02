@@ -76,11 +76,11 @@ strip "bin/nomad" \
 && upx "bin/nomad"
 # NOTE: final layer
 
-# # hadolint ignore=SC2046
-# FROM "scratch"
-# COPY --from=build-stage "/etc/ssl/certs/ca-certificates.crt" "/etc/ssl/certs/"
-# COPY --from=build-stage "/etc_passwd" "/etc/passwd"
-# COPY --chmod=0755 --chown=65534:0 --from=build-stage "/workspace/bin/nomad" /entrypoint
-# #  ────────────────────────────────────────────────────────────
-# USER nobody
-# ENTRYPOINT ["/entrypoint"]
+# hadolint ignore=DL3006
+FROM "scratch"
+COPY --from=build-stage "/etc/ssl/certs/ca-certificates.crt" "/etc/ssl/certs/"
+COPY --from=build-stage "/etc_passwd" "/etc/passwd"
+COPY --chmod=0755 --chown=65534:0 --from=build-stage "/workspace/bin/nomad" /entrypoint
+#  ────────────────────────────────────────────────────────────
+USER nobody
+ENTRYPOINT ["/entrypoint"]
